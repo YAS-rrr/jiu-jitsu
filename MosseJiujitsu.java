@@ -48,6 +48,10 @@ public class MosseJiujitsu{
         return Integer.compare(this.grado, Jiujitsu.getGrado());
     }
 
+    public int CompareTo2(MosseJiujitsu Jiujitsu){
+        return this.nome.compareTo(Jiujitsu.getNome());
+    }
+
     @Override
     public String toString(){
         return "la mossa " + nome + " ha grado " + grado + " ed è di categoria " + categoria + " e la mossa successiva che puoi imparare è " + successiva;

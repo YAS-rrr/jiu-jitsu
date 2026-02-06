@@ -59,23 +59,31 @@ public class Lista{
                 cursor.getJiujitsu().setSuccessiva(cursor.getNext().getJiujitsu().getNome());
                 return cursor.getJiujitsu().toString() ;
             }
-            cursor.getJiujitsu().setSuccessiva("Nessuna mossa successiva");
-            return cursor.getJiujitsu().toString();
+            else{
+             cursor.getJiujitsu().setSuccessiva("Nessuna mossa successiva");
+             return cursor.getJiujitsu().toString();
+             }
         }
         return null;
     }
 
 
 
-    public void eliminazionediuncomputer(nodo n){
+    public void eliminazionediunjiujitsu(nodo n){
         cursor = head;
+        try {
+            
+       
         for(int i = 0; i < size; i++){
-          while(cursor != null && cursor.getNext() != null && cursor.getNext().getJiujitsu().compareTo(n.getJiujitsu()) == 0){
+          while(cursor != null && cursor.getNext() != null && cursor.getNext().getJiujitsu().CompareTo2(n.getJiujitsu()) == 0){
                 cursor.setNext(cursor.getNext().getNext());
                 size--;
             }
             cursor = cursor.getNext();
-        }
+             }
+             } catch (Exception e) {
+                System.out.println("Mossa non trovata");
+            }
 
     }
 
@@ -119,7 +127,7 @@ public class Lista{
         }
         return result.trim();
     }
-
+           
 
     public void inserimentoordinato (nodo n){
         if (head == null || head.getJiujitsu().compareTo(n.getJiujitsu()) > 0) {

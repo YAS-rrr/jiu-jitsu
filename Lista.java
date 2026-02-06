@@ -57,7 +57,7 @@ public class Lista{
         if (cursor != null) {
             if(cursor.getNext() != null){
                 cursor.getJiujitsu().setSuccessiva(cursor.getNext().getJiujitsu().getNome());
-                return cursor.getJiujitsu().toString() + " Successiva: " + cursor.getNext().getJiujitsu().getNome();
+                return cursor.getJiujitsu().toString() ;
             }
             cursor.getJiujitsu().setSuccessiva("Nessuna mossa successiva");
             return cursor.getJiujitsu().toString();
